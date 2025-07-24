@@ -54,13 +54,15 @@ The value data in Covid-19 dataset are compounded on daily basis. This means tha
 
 DAX measures created for the report include:
 
-|DAX measure|Function|Formula|
+|DAX measure|Usage|Formula components|
 |---|---|---|
-|Latest Date per Location|Returns the last date of a location, defined by value of latitude and longtitude|'Latest Date per Location = 
-CALCULATE(
-    MAX('covid_19_clean_complete'[Date]),
-    ALLEXCEPT('covid_19_clean_complete', 'covid_19_clean_complete'[Lat],'covid_19_clean_complete'[Long])
-)'|
+|Latest Date per Location|Returns the last date of a location, defined by value of latitude and longtitude|Functions: CALCULATE, MAX, ALLEXCEPT|
+|Latest Date per Country|Returns the last date of a country|Functions: CALCULATE, MAX, ALLEXCEPT|
+|Confirmed/Active/Recovered/Death cases|Returns total cases with confirmed/active/recovered/death status on country level|Functions: CALCULATE, SUM, FILTER; Reference: Latest Date per Location|
+|(All) Confirmed/Active/Recovered/Death cases|Returns total cases with confirmed/active/recovered/death status on continent level|Functions: CALCULATE, SUM, FILTER; Reference: Latest Date per Country|
+|Recovery Rate|Returns the recovery rate of a location|Functions: DIVIDE; Reference: Recovered cases, Confirmed cases|
+|Mortality Rate|Returns the mortality rate of a location|Functions: DIVIDE; Reference: Death cases, Confirmed cases|
+
 
 Additionally, a calculated column named 'Diff confirmed From Previous Day' was also created. This column calculates the difference in confirmed cases between a day and the previous day of each location (location is defined by a unique combination of country, lat, and long). The formula is as below:
 ````
