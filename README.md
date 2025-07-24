@@ -31,7 +31,7 @@ To avoid inflation of Covid-19 cases, Russia is considered an European country d
 Some abbreviations in the Country list were undo as well to match Power BI's setting.
 
 ### Data Modelling
-The data model first consists of 2 dataset, Covid-19 and Country, which are connected via countries' name. * *(Many-to-one relationship between Covid-19: Country/Region and Country: Country)* *
+The data model first consists of 2 dataset, Covid-19 and Country, which are connected via countries' name. *(Many-to-one relationship between Covid-19: Country/Region and Country: Country)*
 
 (Added image of model)
 
@@ -40,3 +40,58 @@ As best practice, a Date dimension was also added into the model. This dimension
 The final data model is as below:
 
 (Added image of model)
+
+### Data visualization
+The project produced a visual report with interactive components.
+
+(Added gifs)
+
+
+#### DAX measures and calculated columns
+
+The value data in Covid-19 dataset are compounded on daily basis. This means that the number of confirmed, active, recovered cases, and deaths are cummulative with time. It renders basic aggregation of Power BI unusable and customer DAX measures were created as solutions.
+
+DAX measures created for the report include:
+
+(Add table)
+
+Additionally, a calculated column named 'Diff confirmed From Previous Day' was also created. This column calculates the difference in confirmed cases between a day and the previous day of each location (location is defined by a unique combination of country, lat, and long). The formula is as below:
+'''
+Diff confirmed From Previous Day = 
+VAR CurrentDate = 'covid_19_clean_complete'[Date]
+VAR CurrentCountry = 'covid_19_clean_complete'[Country/Region]
+VAR CurrentLat = 'covid_19_clean_complete'[Lat]
+VAR CurrentLong = 'covid_19_clean_complete'[Long]
+VAR PrevValue =
+    CALCULATE(
+        MAX('covid_19_clean_complete'[Confirmed]),
+        FILTER(
+            'covid_19_clean_complete',
+            'covid_19_clean_complete'[Country/Region] = CurrentCountry &&
+            'covid_19_clean_complete'[Lat] = CurrentLat &&
+            'covid_19_clean_complete'[Long] = CurrentLong &&
+            'covid_19_clean_complete'[Date] = 
+                CALCULATE(
+                    MAX('covid_19_clean_complete'[Date]),
+                    FILTER(
+                        'covid_19_clean_complete',
+                        'covid_19_clean_complete'[Country/Region] = CurrentCountry &&
+                        'covid_19_clean_complete'[Date] < CurrentDate
+                    )
+                )
+        )
+    )
+RETURN 
+IF(ISBLANK(PrevValue), BLANK(), ABS('covid_19_clean_complete'[Confirmed] - PrevValue))
+'''
+
+#### Components in the report
+1. Total Confirmed Cases - Card
+2. Current status of Covid-19 Cases - Pie Chart
+3. Daily Growth in Confirmed Cases - Line Chart
+4. Map of Covid-19 Cases - Filled Map
+5. Top 5 Countries with Most Confirmed Cases - Stacked Bar Chart
+6. Top 5 Countries with Highest Recovery Rate - Stacked Bar Chart
+7. Top 5 Countries with Higest Mortality Rate - Stacked Bar Chart
+8. Bookmarks
+9. Dynamic sign-port
