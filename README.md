@@ -11,7 +11,7 @@ The project aims to utilize Power BI as a tool and demonstrate data analysis ski
 
 The project produced a visual report with interactive components in Power BI. The report includes several data visuals that make use of advanced features in Power BI like DAX measures, Bookmarks, and more. Thanks to these features, the report could quickly give a glimpse into how the pandemic is going around the world on both continent- and county-level.
 
-It is worth noting that the project only uses the features available to basic users of Power BI. This limits it to just the Power BI Desktop app. There are features that would have been included if Premium version was available which will be discussed in the Limitation section.
+![gif of report being used](/assets/Recording 2025-07-23 210925.mp4)
 
 ## Data preparation
 ### Data sources
