@@ -100,45 +100,45 @@ IF(ISBLANK(PrevValue), BLANK(), ABS('covid_19_clean_complete'[Confirmed] - PrevV
 
 <img width="590" height="183" alt="total confirmed cases" src="https://github.com/user-attachments/assets/63eee299-e5fd-40c9-9ed8-f113048d51f8" />
 
-It is a straightforward visual which show the total confirmed cases worldwide. It utilizes the DAX measure named ' '.
+It is a straightforward visual which show the total confirmed cases worldwide. It utilizes the DAX measure ``(All) Confirmed cases``.
 
 2. Current status of Covid-19 Cases - Pie Chart
 
 <img width="601" height="382" alt="current status of covid cases" src="https://github.com/user-attachments/assets/368f3228-fa8b-4dea-b3c7-804885da3ed6" />
 
-This visual shows total number of cases which are still active, have recovered, or resulted in death. These 3 categories make up the total confirmed cases.
+This visual shows total number of cases which are still active, have recovered, or resulted in death. These 3 categories make up the total confirmed cases. This visual uses the following DAX measures ``(All) Active/Recovered/Death cases``.
 
 3. Daily Growth in Confirmed Cases - Line Chart
 
 <img width="601" height="596" alt="daily growth in total confirmed cases" src="https://github.com/user-attachments/assets/92e96e08-e7cd-4a65-ad8a-e99396da2320" />
 
-This visual shows the growth in spread of Covid-19 around the world. It utilizes value from the calculated column 'Diff confirmed From Previous Day'.
+This visual shows the growth in spread of Covid-19 around the world. It utilizes value from the calculated column 'Diff confirmed From Previous Day' and basic aggregation SUM.
 
 4. Map of Covid-19 Cases - Filled Map
 
 <img width="599" height="559" alt="map (continental)" src="https://github.com/user-attachments/assets/4001d451-2c7c-4fb3-a6e4-561cf47d932e" />
 
-This visual provides high-level geographical picture of the pandemic on worldwide level. The color changes in intensity based on the number of active cases in a continent. That value and others in the tooltip are calculated using DAX measures ' '.
+This visual provides high-level geographical picture of the pandemic on worldwide level. That visual uses the following DAX measures ``(All) Confirmed/Active/Recovered/Death cases``. The map gradient coloring is based on value calculated from ``(All) Active cases``.
+
+*(Note: On its country-level version, the calculations will make use of location-level DAX measures instead)*
 
 5. Top 5 Countries with Most Confirmed Cases - Stacked Bar Chart
 
 <img width="602" height="558" alt="top 5 confirmed" src="https://github.com/user-attachments/assets/6be93af4-7863-45e9-94a5-5a7d448cd401" />
 
-This visual shows the top 5 countries which have the highest number of confirmed Covid-19 cases at the end of the time period. It uses the DAX measures ' '.
+This visual shows the top 5 countries which have the highest number of confirmed Covid-19 cases at the end of the time period. It uses the DAX measures `Confirmed cases` and Top N advanced filtering.
 
 6. Top 5 Countries with Highest Recovery Rate - Stacked Bar Chart
 
 <img width="602" height="558" alt="top 5 recovered" src="https://github.com/user-attachments/assets/94b06852-bbf1-4d9d-b4fa-7b357f540172" />
 
-This visual shows the top 5 countries which have highest recovery rate from Covid-19. It uses the DAX measures ' '.
+This visual shows the top 5 countries which have highest recovery rate from Covid-19. It uses the DAX measures `Recovery rate` and Top N advanced filtering.
 
 7. Top 5 Countries with Higest Mortality Rate - Stacked Bar Chart
 
-
 <img width="602" height="558" alt="top 5 mortality" src="https://github.com/user-attachments/assets/d28fc975-7ab4-49c1-946f-bc7859b82fe0" />
 
-
-This visual shows the top 5 countries which have highest mortality rate from Covid-19. It uses the DAX measures ' '.
+This visual shows the top 5 countries which have highest mortality rate from Covid-19. It uses the DAX measures `Mortality rate` and Top N advanced filtering.
 
 8. Bookmarks
 
