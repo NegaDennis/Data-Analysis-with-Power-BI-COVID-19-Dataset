@@ -55,6 +55,7 @@ The value data in Covid-19 dataset are compounded on daily basis. This means tha
 DAX measures created for the report include:
 
 |DAX measure|Function|Formula|
+|---|---|---|
 |Latest Date per Location|Returns the last date of a location, defined by value of latitude and longtitude|'Latest Date per Location = 
 CALCULATE(
     MAX('covid_19_clean_complete'[Date]),
