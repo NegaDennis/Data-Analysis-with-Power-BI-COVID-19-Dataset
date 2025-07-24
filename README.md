@@ -56,7 +56,7 @@ DAX measures created for the report include:
 (Add table)
 
 Additionally, a calculated column named 'Diff confirmed From Previous Day' was also created. This column calculates the difference in confirmed cases between a day and the previous day of each location (location is defined by a unique combination of country, lat, and long). The formula is as below:
-'''
+````
 Diff confirmed From Previous Day = 
 VAR CurrentDate = 'covid_19_clean_complete'[Date]
 VAR CurrentCountry = 'covid_19_clean_complete'[Country/Region]
@@ -83,7 +83,7 @@ VAR PrevValue =
     )
 RETURN 
 IF(ISBLANK(PrevValue), BLANK(), ABS('covid_19_clean_complete'[Confirmed] - PrevValue))
-'''
+````
 
 #### Components in the report
 1. Total Confirmed Cases - Card
