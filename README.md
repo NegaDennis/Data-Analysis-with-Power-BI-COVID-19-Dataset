@@ -1,9 +1,13 @@
 # Data-Analytics-with-Power-BI-COVID-19-Dataset
 
 ## Table of Content
+
 [1. Introduction](https://github.com/NegaDennis/Data-Analysis-with-Power-BI-COVID-19-Dataset?tab=readme-ov-file#introduction)
+
 [2. Data preparation](https://github.com/NegaDennis/Data-Analysis-with-Power-BI-COVID-19-Dataset?tab=readme-ov-file#data-preparation)
+
 [3. Report Development](https://github.com/NegaDennis/Data-Analysis-with-Power-BI-COVID-19-Dataset?tab=readme-ov-file#data-visualization)
+
 [4. Project Impact and Limitations](https://github.com/NegaDennis/Data-Analysis-with-Power-BI-COVID-19-Dataset?tab=readme-ov-file#project-impact-and-limitation)
 
 ## 1. Introduction
