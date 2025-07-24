@@ -1,12 +1,12 @@
-# Data-Analysis-with-Power-BI-COVID-19-Dataset
+# Data-Analytics-with-Power-BI-COVID-19-Dataset
 
 ## Table of Content
-1. Introduction
-2. Data preparation
-3. Data visualization
-4. Project Impact and Limitations
+[1. Introduction](https://github.com/NegaDennis/Data-Analysis-with-Power-BI-COVID-19-Dataset?tab=readme-ov-file#introduction)
+[2. Data preparation](https://github.com/NegaDennis/Data-Analysis-with-Power-BI-COVID-19-Dataset?tab=readme-ov-file#data-preparation)
+[3. Report Development](https://github.com/NegaDennis/Data-Analysis-with-Power-BI-COVID-19-Dataset?tab=readme-ov-file#data-visualization)
+[4. Project Impact and Limitations](https://github.com/NegaDennis/Data-Analysis-with-Power-BI-COVID-19-Dataset?tab=readme-ov-file#project-impact-and-limitation)
 
-## Introduction
+## 1. Introduction
 The project aims to utilize Power BI as a tool and demonstrate data analysis skills. The dataset used here is the COVID-19 Dataset from [Kaggle](https://www.kaggle.com/datasets/imdevskp/corona-virus-report/data). The dataset offers data pulled from various reliable sources and straightforward features. In this project, I used the ‘covid_19_clean_complete.csv’ file (hereafter will be referred as the Covid-19 dataset). The data file provides information on Covid-19 cases around the world from 22/1/2020 to 27/7/2020.
 
 The project produced a visual report with interactive components in Power BI. The report includes several data visuals that make use of advanced features in Power BI like DAX measures, Bookmarks, and more. Thanks to these features, the report could quickly give a glimpse into how the pandemic is going around the world on both continent- and county-level.
@@ -14,7 +14,7 @@ The project produced a visual report with interactive components in Power BI. Th
 
 https://github.com/user-attachments/assets/b9f9abd8-6ce9-4096-a5c0-dbc319a2394f
 
-## Data preparation
+## 2. Data preparation
 ### Data sources
 Data sources used for this project included the Covid-19 Dataset from Kaggle and a clean list of countries (hereafter will be referred as Countries dataset). The latter was later added to faciliate analysis on continental level. The clean list of countries was sourced from [thespreadsheetguru](https://www.thespreadsheetguru.com/list-countries-capitals-abbreviations).
 
@@ -46,7 +46,7 @@ The final data model is as below:
 
 
 
-## Data visualization
+## 3. Report Development
 
 ### DAX measures and calculated columns
 
@@ -112,7 +112,7 @@ This visual shows total number of cases which are still active, have recovered, 
 
 <img width="601" height="596" alt="daily growth in total confirmed cases" src="https://github.com/user-attachments/assets/92e96e08-e7cd-4a65-ad8a-e99396da2320" />
 
-This visual shows the growth in spread of Covid-19 around the world. It utilizes value from the calculated column 'Diff confirmed From Previous Day' and basic aggregation SUM.
+This visual shows the growth in spread of Covid-19 around the world. It utilizes value from the calculated column `Diff confirmed From Previous Day` and basic aggregation `SUM`.
 
 4. Map of Covid-19 Cases - Filled Map
 
@@ -136,7 +136,7 @@ This visual shows the top 5 countries which have highest recovery rate from Covi
 
 7. Top 5 Countries with Higest Mortality Rate - Stacked Bar Chart
 
-<img width="602" height="558" alt="top 5 mortality" src="https://github.com/user-attachments/assets/d28fc975-7ab4-49c1-946f-bc7859b82fe0" />
+<img width="510" height="477" alt="top 5 mortality" src="https://github.com/user-attachments/assets/0be6c97f-1481-4772-b6df-2de908724833" />
 
 This visual shows the top 5 countries which have highest mortality rate from Covid-19. It uses the DAX measures `Mortality rate` and Top N advanced filtering.
 
@@ -152,7 +152,7 @@ https://github.com/user-attachments/assets/dc35a6cd-655a-4a91-8658-f38e55ab8fbb
 
 The sign-post is actually a Card visual which take in the value of the continent being filtered for. The exception occurs when **Worldwide** bookmark is used, which will swap the visual out for a static block of text. The sign-post's sole purpose is to inform viewer which continental filter is being applied on the visual report.
 
-## Project Impact and Limitation
+## 4. Project Impact and Limitation
 
 The project succeeded in prodiving a visual report regarding the Covid-19 pandemic around the world from 22/1/2020 to 27/7/2020. The report provides a quick glimpse into the intensity of the pandemic as well as how well different parts of the world is handling it. It also provides interactive components which drill down data into country-level.
 
