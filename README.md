@@ -34,14 +34,16 @@ Some abbreviations in the Country list were undo as well to match Power BI's set
 ### Data Modelling
 The data model first consists of 2 dataset, Covid-19 and Country, which are connected via countries' name. *(Many-to-one relationship between Covid-19: Country/Region and Country: Country)*
 
-<img width="615" height="353" alt="Data model 1" src="https://github.com/user-attachments/assets/52072a09-6694-4959-94aa-031b65114f33" />
+<img width="611" height="325" alt="model 1" src="https://github.com/user-attachments/assets/9321e244-796c-4ff6-9e12-93118d51e319" />
+
 
 
 As best practice, a Date dimension was also added into the model. This dimension was created via **Calculated table** feature in Power BI. Date table was initiated using CALENDARAUTO() which created a list of dates from earliest to latest date in the data model on daily interval. Year, Month, Day columns were then added using time DAX formulas. This Date dimension allows for time intelligence measures and calculations should they become necessary.
 
 The final data model is as below:
 
-<img width="989" height="419" alt="model 2" src="https://github.com/user-attachments/assets/31d490aa-399a-4ce0-bfa9-707e24af408a" />
+<img width="982" height="388" alt="model 2" src="https://github.com/user-attachments/assets/e0654883-c5bb-4090-b6ad-42186f96c8eb" />
+
 
 
 ## Data visualization
@@ -52,7 +54,12 @@ The value data in Covid-19 dataset are compounded on daily basis. This means tha
 
 DAX measures created for the report include:
 
-(Add table)
+|DAX measure|Function|Formula|
+|Latest Date per Location|Returns the last date of a location, defined by value of latitude and longtitude|'Latest Date per Location = 
+CALCULATE(
+    MAX('covid_19_clean_complete'[Date]),
+    ALLEXCEPT('covid_19_clean_complete', 'covid_19_clean_complete'[Lat],'covid_19_clean_complete'[Long])
+)'|
 
 Additionally, a calculated column named 'Diff confirmed From Previous Day' was also created. This column calculates the difference in confirmed cases between a day and the previous day of each location (location is defined by a unique combination of country, lat, and long). The formula is as below:
 ````
