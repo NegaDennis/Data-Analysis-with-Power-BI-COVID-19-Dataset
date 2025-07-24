@@ -122,7 +122,7 @@ This visual provides high-level geographical picture of the pandemic on worldwid
 
 5. Top 5 Countries with Most Confirmed Cases - Stacked Bar Chart
 
-<img width="601" height="556" alt="top 5 confirmed" src="https://github.com/user-attachments/assets/6be93af4-7863-45e9-94a5-5a7d448cd401" />
+<img width="602" height="558" alt="top 5 confirmed" src="https://github.com/user-attachments/assets/6be93af4-7863-45e9-94a5-5a7d448cd401" />
 
 This visual shows the top 5 countries which have the highest number of confirmed Covid-19 cases at the end of the time period. It uses the DAX measures ' '.
 
@@ -134,7 +134,9 @@ This visual shows the top 5 countries which have highest recovery rate from Covi
 
 7. Top 5 Countries with Higest Mortality Rate - Stacked Bar Chart
 
-<img width="602" height="580" alt="top 5 mortality" src="https://github.com/user-attachments/assets/d28fc975-7ab4-49c1-946f-bc7859b82fe0" />
+
+<img width="602" height="558" alt="top 5 mortality" src="https://github.com/user-attachments/assets/d28fc975-7ab4-49c1-946f-bc7859b82fe0" />
+
 
 This visual shows the top 5 countries which have highest mortality rate from Covid-19. It uses the DAX measures ' '.
 
