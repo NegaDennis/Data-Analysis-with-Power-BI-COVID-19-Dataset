@@ -11,7 +11,8 @@ The project aims to utilize Power BI as a tool and demonstrate data analysis ski
 
 The project produced a visual report with interactive components in Power BI. The report includes several data visuals that make use of advanced features in Power BI like DAX measures, Bookmarks, and more. Thanks to these features, the report could quickly give a glimpse into how the pandemic is going around the world on both continent- and county-level.
 
-<img width="1750" height="989" alt="full view" src="https://github.com/user-attachments/assets/0a5af1df-7b94-41e4-987f-b013bc096d60" />
+
+https://github.com/user-attachments/assets/b9f9abd8-6ce9-4096-a5c0-dbc319a2394f
 
 ## Data preparation
 ### Data sources
@@ -33,19 +34,17 @@ Some abbreviations in the Country list were undo as well to match Power BI's set
 ### Data Modelling
 The data model first consists of 2 dataset, Covid-19 and Country, which are connected via countries' name. *(Many-to-one relationship between Covid-19: Country/Region and Country: Country)*
 
-(Added image of model)
+<img width="615" height="353" alt="Data model 1" src="https://github.com/user-attachments/assets/52072a09-6694-4959-94aa-031b65114f33" />
+
 
 As best practice, a Date dimension was also added into the model. This dimension was created via **Calculated table** feature in Power BI. Date table was initiated using CALENDARAUTO() which created a list of dates from earliest to latest date in the data model on daily interval. Year, Month, Day columns were then added using time DAX formulas. This Date dimension allows for time intelligence measures and calculations should they become necessary.
 
 The final data model is as below:
 
-(Added image of model)
+<img width="989" height="419" alt="model 2" src="https://github.com/user-attachments/assets/31d490aa-399a-4ce0-bfa9-707e24af408a" />
+
 
 ## Data visualization
-The project produced a visual report with interactive components.
-
-(Added gifs)
-
 
 ### DAX measures and calculated columns
 
@@ -125,7 +124,7 @@ This visual shows the top 5 countries which have highest recovery rate from Covi
 
 7. Top 5 Countries with Higest Mortality Rate - Stacked Bar Chart
 
-<img width="734" height="580" alt="top 5 mortality" src="https://github.com/user-attachments/assets/d28fc975-7ab4-49c1-946f-bc7859b82fe0" />
+<img width="602" height="580" alt="top 5 mortality" src="https://github.com/user-attachments/assets/d28fc975-7ab4-49c1-946f-bc7859b82fe0" />
 
 This visual shows the top 5 countries which have highest mortality rate from Covid-19. It uses the DAX measures ' '.
 
@@ -139,8 +138,16 @@ The bookmarks in this report function almost like slicers. Besides filtering dat
 
 https://github.com/user-attachments/assets/dc35a6cd-655a-4a91-8658-f38e55ab8fbb
 
-The sign-post is actually a Card visual which take in the value of the continent being filtered for. The exception occurs when **Worldwide** bookmark is used, which will swap the visual out for a static block of text.
+The sign-post is actually a Card visual which take in the value of the continent being filtered for. The exception occurs when **Worldwide** bookmark is used, which will swap the visual out for a static block of text. The sign-post's sole purpose is to inform viewer which continental filter is being applied on the visual report.
 
 ## Project Impact and Limitation
 
-(loren dimsum)
+The project succeeded in prodiving a visual report regarding the Covid-19 pandemic around the world from 22/1/2020 to 27/7/2020. The report provides a quick glimpse into the intensity of the pandemic as well as how well different parts of the world is handling it. It also provides interactive components which drill down data into country-level.
+
+As one can observed previously, there is paginated report 'button' but no paginated report was shown.
+
+<img width="232" height="106" alt="paginated report" src="https://github.com/user-attachments/assets/dfa90d59-824e-40af-9487-5aee3091e9ab" />
+
+This is only the limitation of basic subscription to Power BI. With Premium version, a paginated report, which allow users to filter data by location and time period, would be added. Such feature would enable users to quickly isolate the chunk of data they want and export them into a data file with type of choice.
+
+Another limitation comes from data granularity of the original dataset. As it uses latitude and longtitude data as the lower level to country-level, it was difficult to display and manipulate data in a meaningful way. With better annotation (e.g., city name instead of coordinates), even more detailed analysis and visualization could be available.
